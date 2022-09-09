@@ -27,7 +27,7 @@ const port = process.env.PORT || 8080;
 
 // API Endpoints
 app.get("/", (req, res) => {
-    res.status(200).send("Server SUCCESFULLY (/GET req) created")
+    res.status(200).send("Server created with everything uncommmented")
 })
 
 app.post("/workers", (req, res) => {
