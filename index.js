@@ -25,10 +25,10 @@ const port = process.env.PORT || 8080;
 //     useUnifiedTopology: true,
 //  })
 
-// // API Endpoints
-// app.get("/", (req, res) => {
-//     res.status(200).send("Server SUCCESFULLY (/GET req) created")
-// })
+// API Endpoints
+app.get("/", (req, res) => {
+    res.status(200).send("Server SUCCESFULLY (/GET req) created")
+})
 
 // app.post("/workers", (req, res) => {
 //     const workerCard = req.body;
