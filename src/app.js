@@ -54,7 +54,9 @@ app.get("/workers", (req, res) => {
         res.status(200).send(data);
     })
 })
-app.get('/about', (req, res) => res.send('dale loco about'));
+app.get('/about', (req, res) => {
+    res.send('dale loco about')
+});
 // app.get("/users", (req, res) => {
 //     users.find( (err,data) => {
 //         if(err)  res.status(500).send(err)
