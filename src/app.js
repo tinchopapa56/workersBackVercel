@@ -13,23 +13,22 @@ const app = express();
 //Mongo connection
     const pass_Word = "Workers-hub1234";
     const connectionUrl = `mongodb+srv://Workers-hub:${pass_Word}@workers-hub.iiibfun.mongodb.net/?retryWrites=true&w=majority`
-    
+
+    mongoose.connect(connectionUrl, {
+    useNewUrlParser: true,
+    // useCreateIndex: true,
+    useUnifiedTopology: true,
+    }).catch(error => handleError(error));
 
 // Middlewares
     app.use(express.json());
     app.use(cors());
 
-// NUEVA FORMA DE conectar DB
 
-//DB config
- mongoose.connect(connectionUrl, {
-    useNewUrlParser: true,
-    // useCreateIndex: true,
-    useUnifiedTopology: true,
- })
 
 // API Endpoints
 app.get("/", (req, res) => {
+
     res.status(200).send("Server created with everything uncommmented: debugging")
 })
 
