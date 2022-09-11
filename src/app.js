@@ -55,7 +55,8 @@ app.get("/workers", (req, res) => {
     })
 })
 app.get('/about', (req, res) => {
-    res.send('dale loco about')
+    const texto = "dale loco about"
+    res.send(texto)
 });
 // app.get("/users", (req, res) => {
 //     users.find( (err,data) => {
