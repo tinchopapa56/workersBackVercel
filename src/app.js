@@ -55,7 +55,7 @@ app.get("/workers", (req, res) => {
     })
 })
 app.get('/about', (req, res) => {
-    const texto = "dale loco about"
+    const texto = "dale locewtwetweto about"
     res.send(texto)
 });
 // app.get("/users", (req, res) => {
