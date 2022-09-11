@@ -28,17 +28,17 @@ const app = express();
 
 // API Endpoints
 app.get("/", (req, res) => {
-    res.status(200).send("Server created with everything uncommmented")
+    res.status(200).send("Server created with everything uncommmented: debugging")
 })
 
-app.post("/workers", (req, res) => {
-    const workerCard = req.body;
+// app.post("/workers", (req, res) => {
+//     const workerCard = req.body;
 
-    workers.create(workerCard, (err,data)=>{
-        if(err) res.status(500).send(err) 
-        res.status(201).send(data)
-    })
-})
+//     workers.create(workerCard, (err,data)=>{
+//         if(err) res.status(500).send(err) 
+//         res.status(201).send(data)
+//     })
+// })
 // app.post("/users", (req, res) => {
 //     const userCard = req.body;
 
@@ -73,26 +73,26 @@ app.get("/workers", (req, res) => {
 //         })
 //     })
 // })
-app.delete("/workers/:workerId", (req,res) =>{
-    const workerId = req.params.workerId;
+// app.delete("/workers/:workerId", (req,res) =>{
+//     const workerId = req.params.workerId;
 
-    workers.findById(workerId, (err, worker) =>{
-        if(err) res.status(500).send({message: `Error finding worker id: ${err}`});
-            worker.remove(err => {
-                if(err) res.status(500).send({message: `Error REMOVING worker: ${err}`});
-                res.status(200).send({message: "Worker SUCCESFULLY removed"})
-            })
-    })
-})
-app.put("/workers/:workerId", (req, res) =>{
-    let workerId = req.params.workerId;
-    let updateBody = req.body;
+//     workers.findById(workerId, (err, worker) =>{
+//         if(err) res.status(500).send({message: `Error finding worker id: ${err}`});
+//             worker.remove(err => {
+//                 if(err) res.status(500).send({message: `Error REMOVING worker: ${err}`});
+//                 res.status(200).send({message: "Worker SUCCESFULLY removed"})
+//             })
+//     })
+// })
+// app.put("/workers/:workerId", (req, res) =>{
+//     let workerId = req.params.workerId;
+//     let updateBody = req.body;
 
-    workers.findByIdAndUpdate(workerId, updateBody, (err, workerUpdated) => {
-        if(err) res.status(500).send({message: `Error finding -EEESEESYO- ID to update: ${err}`});
-        res.status(200).send({updatedData: updateBody})
-    })
-})
+//     workers.findByIdAndUpdate(workerId, updateBody, (err, workerUpdated) => {
+//         if(err) res.status(500).send({message: `Error finding -EEESEESYO- ID to update: ${err}`});
+//         res.status(200).send({updatedData: updateBody})
+//     })
+// })
 // app.put("/users/:userId", (req,res) => {
 //     let userId = req.params.userId;
 //     let updateBody = req.body;
