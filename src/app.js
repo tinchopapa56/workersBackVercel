@@ -19,6 +19,8 @@ const app = express();
     app.use(express.json());
     app.use(cors());
 
+// NUEVA FORMA DE conectar DB
+
 //DB config
  mongoose.connect(connectionUrl, {
     useNewUrlParser: true,
