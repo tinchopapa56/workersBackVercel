@@ -54,7 +54,7 @@ app.get("/workers", (req, res) => {
         res.status(200).send(data);
     })
 })
-app.get('/about', (req, res) => {
+app.get('/about', (req, res) => {       //esto anda bien WROKERS NO
     const texto = "dale locewtwetweto about"
     res.send(texto)
 });
