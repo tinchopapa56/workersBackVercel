@@ -1,6 +1,6 @@
 const express = require ("express");
 const mongoose =  require ("mongoose") ;
-const workers =  require ("./workerSchema.js") ;
+const Workers =  require ("./workerSchema.js") ;
 // const users =  require ("./UserSchema.js") ;
 const cors =  require ("cors") ;
 
@@ -49,7 +49,7 @@ app.get("/", (req, res) => {
 // })
 
 app.get("/workers", (req, res) => {
-    workers.find( (err,data) => {
+    Workers.find( (err,data) => {
         if(err) res.status(500).send(err);
         res.status(200).send(data);
     })
