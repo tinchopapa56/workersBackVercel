@@ -23,7 +23,7 @@ const app = express();
 
     mongoose.connect(connectionUrl, options).then(
         () => { console.log("succesfully connected to DB") },
-        err => {  handleError(err) }
+        err => {  handleError(err); console.log(err) }
       );
 
 // Middlewares
