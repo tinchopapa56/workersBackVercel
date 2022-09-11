@@ -13,12 +13,18 @@ const app = express();
 //Mongo connection
     const pass_Word = "Workers-hub1234";
     const connectionUrl = `mongodb+srv://Workers-hub:${pass_Word}@workers-hub.iiibfun.mongodb.net/?retryWrites=true&w=majority`
+    const options = {
+        useNewUrlParser: true,
+        // useCreateIndex: true,
+        useUnifiedTopology: true,
+    }
+    // mongoose.connect(connectionUrl, options)
+    // .catch(error => handleError(error));
 
-    mongoose.connect(connectionUrl, {
-    useNewUrlParser: true,
-    // useCreateIndex: true,
-    useUnifiedTopology: true,
-    }).catch(error => handleError(error));
+    mongoose.connect(connectionUrl, options).then(
+        () => { console.log("succesfully connected to DB") },
+        err => {  handleError(err) }
+      );
 
 // Middlewares
     app.use(express.json());
